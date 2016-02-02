@@ -79,11 +79,11 @@ bases = ['A', 'T', 'C', 'G']
 
 for sample_id in L1.keys():
     fp3.write('sample_id ' + sample_id + '\n')
-    temp = ['location', 'mutation_num_total', 'A', 'T', 'C', 'G', 'percent']
+    temp = ['location', 'seq_count', 'mutation_num_total', 'standard', 'A', 'T', 'C', 'G', 'percent']
     fp3.write('\t'.join(temp) + '\n')
     for n in L1[sample_id].keys():
         count = Cal(L1[sample_id][n])
-        L = [str(n), str(count)]
+        L = [str(n), str(sample[sample_id]), str(count), ex1[n-1]]
         for b in bases:
             L.append(str(L1[sample_id][n][b]))
         percent = count/sample[sample_id]
@@ -91,11 +91,11 @@ for sample_id in L1.keys():
         fp3.write('\t'.join(L) + '\n')
 for sample_id in L2.keys():
     fp4.write('sample_id ' + sample_id + '\n')
-    temp = ['location', 'mutation_num_total', 'A', 'T', 'C', 'G', 'percent']
+    temp = ['location', 'seq_count', 'mutation_num_total', 'standard', 'A', 'T', 'C', 'G', 'percent']
     fp4.write('\t'.join(temp) + '\n')
     for n in L2[sample_id].keys():
         count = Cal(L2[sample_id][n])
-        L = [str(n), str(count)]
+        L = [str(n), str(sample[sample_id]), str(count), ex2[n-1]]
         for b in bases:
             L.append(str(L2[sample_id][n][b]))
         percent = count/sample[sample_id]
