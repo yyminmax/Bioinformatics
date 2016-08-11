@@ -19,3 +19,7 @@ export PATH=INSTALL/bin:$PATH
 export PYTHONPATH=/usr/lib/python2.7/dist-packages:$INSTALLPATH/lib/python2.7/site-packages
 
 pip install packages --install-option="--prefix=$INSTALLPATH/lib/python2.7/site-packages" --ignore-installed 
+
+or
+
+easy_install -d $INSTALLPATH/lib/python2.7/site-packages "packages>version"
